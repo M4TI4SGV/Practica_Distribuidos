@@ -1,0 +1,39 @@
+//DEPENDECIAS NECESSARIAS
+npm install apollo-server graphql
+
+//EJECUTAR
+node index.js
+
+//CONSULTAR LIBROS Y AUTORES
+query {
+  libros {
+    id
+    titulo
+    autor {
+      nombre
+    }
+  }
+}
+
+
+//CONSULTAR A UN LIBRO POR id
+query {
+  libro(id: "1") {
+    titulo
+    autor {
+      nombre
+    }
+  }
+}
+
+
+// AGREGAR NUEVO LIBRO
+mutation {
+  agregarLibro(titulo: "El amor en los tiempos del cólera", autorId: "1") {
+    id
+    titulo
+    autor {
+      nombre
+    }
+  }
+}
